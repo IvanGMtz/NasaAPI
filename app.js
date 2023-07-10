@@ -1,7 +1,11 @@
+import { fileURLToPath } from 'url'; //
+import { dirname } from 'path';
 import express from 'express';
 import fetch from 'node-fetch';
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Configurar el motor de vistas
 app.set('view engine', 'ejs');
@@ -17,8 +21,9 @@ app.get('/', async (req, res) => {
     if (response.ok) {
       // Convertir la respuesta a formato JSON
       const data = await response.json();
-      console.log(data);
 
+      // Renderizar la vista y pasar los datos
+      res.render('index', { data });
     } else {
       // Manejar errores de la solicitud
       const errorData = await response.json();
@@ -37,3 +42,4 @@ app.listen(3000, () => {
   console.log('Servidor iniciado en el puerto 3000');
 });
 
+export default app;
