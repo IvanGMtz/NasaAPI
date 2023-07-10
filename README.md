@@ -14,14 +14,11 @@ Sigue estos pasos para configurar y ejecutar el proyecto:
 
 1. Clona el repositorio o descarga los archivos del ejercicio.
 2. Abre una terminal y navega hasta el directorio del proyecto.
-3. Ejecuta los siguiente comando para instalar las dependencias:
+3. Ejecuta el siguiente comando para instalar las dependencias:
 
 ```
 shellCopy code
-npm install ejs
-npm install express
-npm install node-fetch
-npm install nodemon
+npm install
 ```
 
 1. Abre el archivo `app.js` y asegúrate de que la clave de API de la NASA sea válida. Puedes obtener una clave de API gratuita registrándote en el sitio web de la NASA.
@@ -29,7 +26,7 @@ npm install nodemon
 
 ```
 shellCopy code
-nodemon --quiet app.js
+npm run dev
 ```
 
 1. Abre tu navegador web y visita `http://localhost:3000` para ver la página con la imagen y los detalles del APOD.
@@ -73,10 +70,7 @@ Follow these steps to set up and run the project:
 
 ```
 shellCopy code
-npm install ejs
-npm install express
-npm install node-fetch
-npm install nodemon
+npm install
 ```
 
 1. Open the `app.js` file and make sure the NASA API key is valid. You can obtain a free API key by registering on the NASA website.
@@ -84,7 +78,7 @@ npm install nodemon
 
 ```
 shellCopy code
-nodemon --quiet app.js
+npm run dev
 ```
 
 1. Open your web browser and visit `http://localhost:3000` to see the page with the APOD image and details.
