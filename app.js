@@ -1,5 +1,7 @@
 import { fileURLToPath } from 'url'; //Función que convierte una URL de archivo en una ruta de archivo local válida en el sistema de archivos
 import { dirname } from 'path'; //Función que devuelve el nombre del directorio padre de una ruta de archivo.
+import dotenv from "dotenv";
+dotenv.config();
 import express from 'express';
 import fetch from 'node-fetch';
 
@@ -38,8 +40,7 @@ app.get('/', async (req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(3000, () => {
-  console.log('Servidor iniciado en el puerto 3000');
+let config = JSON.parse(process.env.MY_CONFIG);
+app.listen(config, ()=>{
+    console.log(`http://${config.hostname}:${config.port}`);
 });
-
-export default app;
