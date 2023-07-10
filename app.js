@@ -1,11 +1,11 @@
-import { fileURLToPath } from 'url'; //
-import { dirname } from 'path';
+import { fileURLToPath } from 'url'; //Función que convierte una URL de archivo en una ruta de archivo local válida en el sistema de archivos
+import { dirname } from 'path'; //Función que devuelve el nombre del directorio padre de una ruta de archivo.
 import express from 'express';
 import fetch from 'node-fetch';
 
 const app = express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url); // Convierte esa URL en una ruta de archivo local compatible con el sistema operativo
+const __dirname = dirname(__filename); // Para obtener el directorio base del archivo actual a partir de la ruta de archivo local obtenida mediante fileURLToPath.
 
 // Configurar el motor de vistas
 app.set('view engine', 'ejs');
